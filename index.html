@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,6 +11,7 @@
   <link href="style.css" rel="stylesheet" />
   <title>photo-filter</title>
 </head>
+
 <body>
   <header class="header">
     <h1 class="header-title">Photo-filter</h1>
@@ -18,12 +20,12 @@
     <div class="filters">
       <label>
         Blur:
-        <input name="blur" data-sizing="px" type="range" min="0" max="10" value="0"  />
+        <input name="blur" data-sizing="px" type="range" min="0" max="10" value="0" />
         <output name="blur-result">0</output>
       </label>
       <label>
         Invert:
-        <input name="invert" data-sizing="%" type="range" min="0" max="100" value="0"  />
+        <input name="invert" data-sizing="%" type="range" min="0" max="100" value="0" />
         <output name="invert-result">0</output>
       </label>
       <label>
@@ -50,14 +52,20 @@
           Load picture
           <input class="btn-load--input" id="btnInput" name="upload" type="file" placeholder="Load picture" />
         </label>
-        <button class="btn btn-save">Save picture</button>
+        <!-- <button class="btn btn-save">Save picture</button> -->
+        <a href="#" class="btn btn-save" download="my-file-name.png">Save picture</a>
       </div>
-      <img src="assets/img/img.jpg" alt="image" />
+      <div class="canvascontainer">
+        
+        <img src="assets/img/img.jpg" alt="image" id="mirror" class="canvasmirror"/>
+      </div>
+
     </div>
   </main>
   <footer class="footer">
     <div class="footer-container">
-      <a class="github" href="https://github.com/HulionGH/" target="_blank" rel="noopener noreferrer">github/HulionGH</a>
+      <a class="github" href="https://github.com/HulionGH/" target="_blank"
+        rel="noopener noreferrer">github/HulionGH</a>
       <a class="userName" href="https://discord.com/channels/" target="" rel="">Discord UserName: @Julia#6440 </a>
       <a class="rss" href="https://rs.school/js/" target="_blank" rel="noopener">
         <span class="rss-year">'21</span>
@@ -65,6 +73,8 @@
     </div>
   </footer>
   <button class="fullscreen openfullscreen"></button>
+  <canvas id="canvas" class="canvasss"></canvas>
   <script src="script.js"></script>
 </body>
+
 </html>

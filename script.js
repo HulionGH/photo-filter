@@ -26,6 +26,7 @@ document.querySelector('.fullscreen').addEventListener('click', (event) => {
   /*-- Buttons --*/
   const buttons = document.querySelectorAll('.btn');
   const resetBtn = document.querySelector('.btn-reset');
+  const saveBtn = document.querySelector('.btn-save');
   
   document.querySelectorAll('.btn').forEach(btn => btn.addEventListener('click', (element) => {
     let pressedBtn = element.target;
@@ -46,8 +47,30 @@ document.querySelector('.fullscreen').addEventListener('click', (event) => {
   }
   resetBtn.addEventListener('click', resetValues);
   
-  
-  
+  /*-- SAVE IMAGE FUNCTION --*/
+
+  let mirror = document.getElementById('mirror');
+
+  function forceDownload(url, fileName){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.responseType = "blob";
+    xhr.onload = function(){
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL(this.response);
+        var tag = document.createElement('a');
+        tag.href = imageUrl;
+        tag.download = fileName;
+        document.body.appendChild(tag);
+        tag.click();
+        document.body.removeChild(tag);
+    }
+    xhr.send();
+}
+
+saveBtn.addEventListener('click', function (e) {
+  forceDownload(mirror.src, 'fdf.png')
+});
   
   
 
