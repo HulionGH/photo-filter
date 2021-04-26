@@ -120,6 +120,7 @@ output {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .btn:not(.btn-active):hover {
   background-color: #515961;
 }
