@@ -49,27 +49,17 @@ document.querySelector('.fullscreen').addEventListener('click', (event) => {
   
   /*-- SAVE IMAGE FUNCTION --*/
 
-  let mirror = document.getElementById('mirror');
-
-  function forceDownload(url, fileName){
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.responseType = "blob";
-    xhr.onload = function(){
-        var urlCreator = window.URL || window.webkitURL;
-        var imageUrl = urlCreator.createObjectURL(this.response);
-        var tag = document.createElement('a');
-        tag.href = imageUrl;
-        tag.download = fileName;
-        document.body.appendChild(tag);
-        tag.click();
-        document.body.removeChild(tag);
-    }
-    xhr.send();
-}
-
 saveBtn.addEventListener('click', function (e) {
-  forceDownload(mirror.src, 'fdf.png')
+  let img = document.getElementById('mirror');
+  const canvas = document.getElementById('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  const context = canvas.getContext("2d");
+  context.drawImage(img, 0, 0, img.width, img.height);
+  var link = document.createElement('a');
+  link.download = img.src;
+  link.href = document.getElementById('canvas').toDataURL('image/jpeg');
+  link.click();
 });
   
   
