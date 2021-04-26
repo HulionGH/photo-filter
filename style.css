@@ -157,6 +157,7 @@ output {
   padding-top: 60px;
   margin-bottom: 40px;
 }
+
 .editor {
   display: flex;
   flex-direction: column;
@@ -181,9 +182,6 @@ img {
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
     hue-rotate(var(--hue, 0deg));
 }
-
-
-
 
 .fullscreen {
   position: fixed;
