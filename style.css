@@ -119,6 +119,8 @@ output {
   outline: 0;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
+  text-align: center;  
 }
 
 .btn:not(.btn-active):hover {
@@ -179,6 +181,10 @@ img {
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
     hue-rotate(var(--hue, 0deg));
 }
+
+
+
+
 .fullscreen {
   position: fixed;
   top: 120px;
