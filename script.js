@@ -29,13 +29,14 @@ inputs.forEach((input) => input.addEventListener("change", toUpdate));
 const buttons = document.querySelectorAll(".btn");
 const resetBtn = document.querySelector(".btn-reset");
 const saveBtn = document.querySelector(".btn-save");
+const uploadBtn = document.getElementById('btnInput');
 
-document.querySelectorAll(".btn").forEach((btn) =>
+/*--document.querySelectorAll(".btn").forEach((btn) =>
   btn.addEventListener("click", (element) => {
     let pressedBtn = element.target;
     pressedBtn.classList.add("btn-active");
   })
-);
+);--*/
 
 /*-- RESET FUNCTION --*/
 function resetValues() {
@@ -75,5 +76,14 @@ saveBtn.addEventListener("click", function (e) {
   link.click();
 });
 
+/*-- UPLOAD IMG FUNCTION --*/
+uploadBtn.addEventListener('change', function () {
+  let img = document.getElementById("mirror");
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    img.src = e.target.result;
+  }
+  reader.readAsDataURL(this.files[0]);
+});
 
 
