@@ -122,19 +122,20 @@ output {
   text-decoration: none;
   text-align: center;  
 }
-
-.btn:not(.btn-active):hover {
-  background-color: #515961;
-}
-.btn:active {
-  background-color: #00c9b7;
-}
-.btn-active {
-  background-color: #00b4a4;
+.btn:hover {
+  color: #00c9b7;
 }
 .btn-active:hover {
   background-color: #00c9b7;
 }
+.btn:active {
+  background-color: #00c9b7;
+  color: #313940;
+}
+.btn-active {
+  background-color: #00b4a4;
+}
+
 .btn-load {
   position: relative;
   display: inline-flex;
@@ -184,7 +185,7 @@ img {
 }
 .canvasss {
   position: absolute;
-  left: -10000px;
+  left: -1000px
 }
 .fullscreen {
   position: fixed;
