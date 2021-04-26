@@ -93,21 +93,20 @@ let currentHour = today.getHours();
 
 nextPicBtn.addEventListener('click', function () {
   let img = document.getElementById("mirror");
+  let currentPath = img.src;
+  let path = 'assets/img/';
+  let fileName = parseInt(currentPath.replace(/.*\\|.*\/|\..*$/g, ''));
+  fileName = fileName < 20 ? fileName : 0;
+  
   if (currentHour >= 0 && currentHour < 6) {
-    console.log(img.src);
-    img.src = "assets/img/night/01.jpg";
+    path += "night/";
   } else if (currentHour >= 6 && currentHour < 12) {
-    console.log(img.src);
-    img.src = "assets/img/morning/01.jpg";
+    path += "morning/";
   } else if (currentHour >= 12 && currentHour < 18) {
-    console.log(img.src);
-    img.src = "assets/img/day/01.jpg";
+    path += "day/";
   } else if (currentHour >= 18 && currentHour < 24) {
-    console.log(img.src);
-    img.src = "assets/img/evening/01.jpg";
+    path += "evening/";
   }
-
+  img.src = fileName >= 9 ? path + (fileName + 1) + '.jpg' : path + '0' + (fileName + 1) + '.jpg';
 });
-
-
 
