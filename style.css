@@ -182,7 +182,10 @@ img {
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
     hue-rotate(var(--hue, 0deg));
 }
-
+.canvasss {
+  position: absolute;
+  left: -10000px;
+}
 .fullscreen {
   position: fixed;
   top: 120px;
