@@ -30,6 +30,7 @@ const buttons = document.querySelectorAll(".btn");
 const resetBtn = document.querySelector(".btn-reset");
 const saveBtn = document.querySelector(".btn-save");
 const uploadBtn = document.getElementById('btnInput');
+const nextPicBtn = document.querySelector(".btn-next");
 
 /*--document.querySelectorAll(".btn").forEach((btn) =>
   btn.addEventListener("click", (element) => {
@@ -85,5 +86,28 @@ uploadBtn.addEventListener('change', function () {
   }
   reader.readAsDataURL(this.files[0]);
 });
+
+/*-- LOAD TIME PIC FUNCTION --*/
+let today = new Date();
+let currentHour = today.getHours();
+
+nextPicBtn.addEventListener('click', function () {
+  let img = document.getElementById("mirror");
+  if (currentHour >= 0 && currentHour < 6) {
+    console.log(img.src);
+    img.src = "assets/img/night/01.jpg";
+  } else if (currentHour >= 6 && currentHour < 12) {
+    console.log(img.src);
+    img.src = "assets/img/morning/01.jpg";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    console.log(img.src);
+    img.src = "assets/img/day/01.jpg";
+  } else if (currentHour >= 18 && currentHour < 24) {
+    console.log(img.src);
+    img.src = "assets/img/evening/01.jpg";
+  }
+
+});
+
 
 
